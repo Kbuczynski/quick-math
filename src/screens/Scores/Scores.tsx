@@ -1,5 +1,10 @@
-import { SafeAreaView } from 'react-native'
+import ScoresList from './components/ScoresList/ScoresList'
+import ScoresWrapper from './components/ScoresWrapper/ScoresWrapper'
 
 export default function Scores() {
-  return <SafeAreaView></SafeAreaView>
+  return (
+    <ScoresWrapper>
+      <ScoresList />
+    </ScoresWrapper>
+  )
 }

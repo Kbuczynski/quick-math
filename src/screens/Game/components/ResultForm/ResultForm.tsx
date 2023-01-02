@@ -51,6 +51,7 @@ export default function ResultForm({
       />
 
       <StyledNumbersList
+        scrollEnabled={false}
         data={chars}
         renderItem={(char) => (
           <Button

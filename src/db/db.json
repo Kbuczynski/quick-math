@@ -2,20 +2,39 @@
   "users": [
     {
       "id": "1",
-      "name": "admin",
+      "name": "John Doe",
       "password": "12345678",
       "score": 0
     },
     {
       "id": "2",
-      "name": "test",
+      "name": "Steve Bruce",
       "password": "12345678",
       "score": 1
     },
     {
-      "id": 3,
-      "name": "test",
-      "password": "12345678"
+      "id": "3",
+      "name": "Steve Bruce",
+      "password": "12345678",
+      "score": 1
+    },
+    {
+      "id": "4",
+      "name": "Steve Bruce",
+      "password": "12345678",
+      "score": 1000
+    },
+    {
+      "id": "5",
+      "name": "Steve Bruce",
+      "password": "12345678",
+      "score": 15
+    },
+    {
+      "id": "6",
+      "name": "Steve Bruce",
+      "password": "12345678",
+      "score": 15
     }
   ]
 }
