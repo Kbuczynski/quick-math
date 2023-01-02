@@ -8,13 +8,13 @@ export const StyledEquation = styled(View)`
 `
 export const StyledOperation = styled(Text)`
   font-size: 50px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const StyledNumbersContainer = styled(View)``
 
 export const StyledNumber = styled(Text)`
   font-size: 50px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   text-align: right;
 `

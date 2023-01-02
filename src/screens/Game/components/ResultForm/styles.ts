@@ -9,10 +9,15 @@ export const StyledResultInput = styled(TextInput).attrs({
   type: 'text',
 })<{ isCorrectAnswer: boolean; isWrongAnswer: boolean }>`
   font-size: 50px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   border: none;
   text-align: right;
-  background-color: ${(props) => (props.isCorrectAnswer ? '#23B565' : props.isWrongAnswer ? '#F15152' : '#000')};
+  background-color: ${(props) =>
+    props.isCorrectAnswer
+      ? props.theme.colors.success
+      : props.isWrongAnswer
+      ? props.theme.colors.failure
+      : props.theme.colors.background};
   transition: background-color 0.1s ease;
 `
 

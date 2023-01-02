@@ -17,10 +17,10 @@ export default function Timer({ time }: TimerProps) {
   const isFinalSeconds = useMemo(() => time < 10, [time])
 
   return (
-    <StyledTimer isFinalSeconds={isFinalSeconds}>
-      <StyledTimerValue>{minutes}</StyledTimerValue>
-      <StyledSeparator>:</StyledSeparator>
-      <StyledTimerValue>{seconds}</StyledTimerValue>
+    <StyledTimer>
+      <StyledTimerValue isFinalSeconds={isFinalSeconds}>{minutes}</StyledTimerValue>
+      <StyledSeparator isFinalSeconds={isFinalSeconds}>:</StyledSeparator>
+      <StyledTimerValue isFinalSeconds={isFinalSeconds}>{seconds}</StyledTimerValue>
     </StyledTimer>
   )
 }

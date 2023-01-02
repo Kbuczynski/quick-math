@@ -8,12 +8,13 @@
     "start": "react-native start",
     "api": "json-server --watch ./src/db/db.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "sanity": "yarn tsc && yarn lint"
+    "prettier": "prettier --check './src/*' -w",
+    "sanity": "yarn tsc && yarn lint && yarn prettier"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "6.5.2",
     "@react-navigation/native": "6.1.1",
-    "axios": "^1.2.2",
+    "axios": "1.2.2",
     "json-server": "0.17.1",
     "react": "18.1.0",
     "react-native": "0.70.6",
@@ -21,7 +22,7 @@
     "react-native-reanimated": "2.13.0",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "3.18.2",
-    "react-query": "^3.39.2",
+    "react-query": "3.39.2",
     "react-redux": "8.0.5",
     "redux": "4.2.0",
     "styled-components": "5.3.6"

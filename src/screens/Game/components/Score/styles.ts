@@ -7,10 +7,10 @@ export const StyledScore = styled(View)`
 
 export const StyledNumber = styled(Text)`
   font-size: 48px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const StyledSeparator = styled(Text)`
   font-size: 48px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `

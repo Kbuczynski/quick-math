@@ -5,17 +5,18 @@ export const StyledCustomModalContainer = styled(SafeAreaView)`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${({ theme }) => theme.colors.backgroundOpacity};
 `
 
 export const StyledCustomModalContent = styled(View)`
   padding: 48px;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.backgroundOpacity};
+  flex: 0.5;
 `
 
 export const StyledCustomModalText = styled(Text)`
   font-size: 28px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   text-align: center;
   margin: 10px 0;
 `
