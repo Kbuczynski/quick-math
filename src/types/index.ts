@@ -12,3 +12,10 @@ export interface Settings {
   timeToAdd: number
   timeToSub: number
 }
+
+export interface UserType {
+  id: string
+  name: string
+  password: string
+  score: number
+}

@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "password": "12345678",
+      "score": 0
+    },
+    {
+      "id": "2",
+      "name": "test",
+      "password": "12345678",
+      "score": 1
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "password": "12345678"
+    }
+  ]
+}
