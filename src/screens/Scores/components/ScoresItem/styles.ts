@@ -6,9 +6,9 @@ export const StyledScoresItem = styled(View)`
   flex-direction: row;
 `
 
-export const StyledScoresItemText = styled(Text)<{ centered?: boolean }>`
+export const StyledScoresItemText = styled(Text)<{ centered?: boolean; isCurrentUser: boolean }>`
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${(props) => (props.isCurrentUser ? props.theme.colors.ornament : props.theme.colors.text)};
   flex: 1;
   text-align: ${(props) => (props.centered ? 'center' : 'left')};
 `

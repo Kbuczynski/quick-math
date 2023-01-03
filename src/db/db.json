@@ -4,25 +4,25 @@
       "id": "1672754724944",
       "name": "Test",
       "password": "1234",
-      "score": 0
+      "score": 3
     },
     {
       "id": "1672755031865",
       "name": "Kamil",
       "password": "1234",
-      "score": 0
-    },
-    {
-      "id": "1672755175636",
-      "name": "123",
-      "password": "123",
-      "score": 0
+      "score": 5
     },
     {
       "id": "1672755716015",
-      "name": "admin",
-      "password": "admin",
-      "score": 0
+      "name": "John",
+      "password": "1234",
+      "score": 25
+    },
+    {
+      "id": "1672759020533",
+      "name": "Steve",
+      "password": "1234",
+      "score": 9
     }
   ]
 }

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext, useMemo } from 'react'
 import { StyledScoresItem, StyledScoresItemText } from './styles'
 import { UserType } from 'src/types'
+import { AuthContext } from 'src/context'
 
 interface ScoresItemProps {
   user: UserType
@@ -8,11 +9,17 @@ interface ScoresItemProps {
 }
 
 export default function ScoresItem({ user, index }: ScoresItemProps) {
+  const { auth } = useContext(AuthContext)
+
+  const isCurrentUser = useMemo(() => auth?.id === user.id, [auth?.id, user.id])
+
   return (
     <StyledScoresItem>
-      <StyledScoresItemText>{index}</StyledScoresItemText>
-      <StyledScoresItemText>{user.name}</StyledScoresItemText>
-      <StyledScoresItemText centered>{user.score}</StyledScoresItemText>
+      <StyledScoresItemText isCurrentUser={isCurrentUser}>{index}</StyledScoresItemText>
+      <StyledScoresItemText isCurrentUser={isCurrentUser}>{user.name}</StyledScoresItemText>
+      <StyledScoresItemText centered isCurrentUser={isCurrentUser}>
+        {user.score}
+      </StyledScoresItemText>
     </StyledScoresItem>
   )
 }

@@ -7,6 +7,7 @@ import Start from 'src/screens/Start/Start'
 
 const Tab = createBottomTabNavigator()
 
+// TODO: add logout to header
 export default function Navigation() {
   const { auth } = useContext(AuthContext)
 

@@ -7,7 +7,7 @@ interface PatchUserProps {
 }
 
 async function patchUser({ id, score }: PatchUserProps) {
-  return (await http.patch(`/users/${id}`, { id, score })).data
+  return (await http.patch(`/users/${id}`, { score })).data
 }
 
 export function useUpdateUser() {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import { useEquation, useSettings, useTimer } from './hooks'
 import CustomModal from 'src/components/CustomModal/CustomModal'
 import GameWrapper from './components/GameWrapper/GameWrapper'
@@ -7,6 +7,9 @@ import Timer from './components/Timer/Timer'
 import Score from './components/Score/Score'
 import Equation from './components/Equation/Equation'
 import ResultForm from './components/ResultForm/ResultForm'
+import { AuthContext } from 'src/context'
+import { useUpdateUser } from 'src/api/useUpdateUser'
+import { useUser } from 'src/api/useUser'
 
 export default function Game() {
   const [score, setScore] = useState<number>(0)
@@ -25,6 +28,9 @@ export default function Game() {
     increaseNumberOfEquation,
     resetEquation,
   } = useEquation(settings, score, setScore, addTime, subTime)
+  const { auth } = useContext(AuthContext)
+  const { mutate } = useUpdateUser()
+  const { data: user } = useUser(auth?.id as string)
 
   function resetGame() {
     resetSettings()
@@ -38,7 +44,11 @@ export default function Game() {
   }
 
   useEffect(() => {
-    endOfTime && setModalVisible(true)
+    if (endOfTime) {
+      setModalVisible(true)
+      user && user?.score < score && mutate({ id: user?.id as string, score: score })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endOfTime])
 
   const playAgainVisible = useMemo(() => endOfTime && !modalVisible, [endOfTime, modalVisible])
