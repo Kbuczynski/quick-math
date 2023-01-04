@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, createContext } from 'react'
 
 export type AuthType = {
   id: string
+  score: number
   logged: boolean
 }
 

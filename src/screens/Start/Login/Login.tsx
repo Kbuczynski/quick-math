@@ -18,7 +18,7 @@ export default function Login({ users }: LoginProps) {
   // TODO: add error handling
   function handleLogin() {
     const correctData = users?.filter((user: UserType) => user.name === login && user.password === password)
-    correctData?.length && setAuth({ id: correctData[0].id, logged: true })
+    correctData?.length && setAuth({ id: correctData[0].id, score: correctData[0].score, logged: true })
   }
 
   return (

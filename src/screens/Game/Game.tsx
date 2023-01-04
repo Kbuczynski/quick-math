@@ -9,7 +9,6 @@ import Equation from './components/Equation/Equation'
 import ResultForm from './components/ResultForm/ResultForm'
 import { AuthContext } from 'src/context'
 import { useUpdateUser } from 'src/api/useUpdateUser'
-import { useUser } from 'src/api/useUser'
 
 export default function Game() {
   const [score, setScore] = useState<number>(0)
@@ -28,9 +27,8 @@ export default function Game() {
     increaseNumberOfEquation,
     resetEquation,
   } = useEquation(settings, score, setScore, addTime, subTime)
-  const { auth } = useContext(AuthContext)
+  const { auth, setAuth } = useContext(AuthContext)
   const { mutate } = useUpdateUser()
-  const { data: user } = useUser(auth?.id as string)
 
   function resetGame() {
     resetSettings()
@@ -46,7 +44,10 @@ export default function Game() {
   useEffect(() => {
     if (endOfTime) {
       setModalVisible(true)
-      user && user?.score < score && mutate({ id: user?.id as string, score: score })
+      if (auth && auth?.score < score) {
+        mutate({ id: auth?.id as string, score: score })
+        setAuth({ ...auth, score })
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endOfTime])

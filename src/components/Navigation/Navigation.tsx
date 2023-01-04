@@ -16,6 +16,7 @@ export default function Navigation() {
   function handleLogout() {
     setAuth({
       id: '',
+      score: 0,
       logged: false,
     })
   }
