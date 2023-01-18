@@ -36,6 +36,7 @@ export default function ScoresList() {
       keyExtractor={(user: any) => `${user.name}${user.id}`}
       renderItem={(user) => <ScoresItem user={user.item as UserType} index={++user.index} />}
       ListEmptyComponent={<ScoresEmptyList text="No scores" />}
+      initialNumToRender={users?.length}
     />
   )
 }
