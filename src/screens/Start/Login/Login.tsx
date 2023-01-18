@@ -11,14 +11,14 @@ interface LoginProps {
 }
 
 export default function Login({ users }: LoginProps) {
-  const [login, setLogin] = useState('')
+  const { auth, setAuth } = useContext(AuthContext)
+  const [login, setLogin] = useState(auth?.name || '')
   const [password, setPassword] = useState('')
-  const { setAuth } = useContext(AuthContext)
 
   // TODO: add error handling
   function handleLogin() {
     const correctData = users?.filter((user: UserType) => user.name === login && user.password === password)
-    correctData?.length && setAuth({ id: correctData[0].id, score: correctData[0].score, logged: true })
+    correctData?.length && setAuth({ id: correctData[0].id, name: login, score: correctData[0].score, logged: true })
   }
 
   return (

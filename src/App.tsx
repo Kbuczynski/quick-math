@@ -9,7 +9,12 @@ import { useState } from 'react'
 const queryClient = new QueryClient()
 
 export default function App() {
-  const [auth, setAuth] = useState<AuthType>()
+  const [auth, setAuth] = useState<AuthType>({
+    id: '',
+    name: '',
+    score: 0,
+    logged: false,
+  })
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>

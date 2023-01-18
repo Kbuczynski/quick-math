@@ -13,3 +13,8 @@ interface NavigateState {
 export interface TabBarCustomProps extends SceneRendererProps {
   navigationState: NavigateState
 }
+
+export enum StartTabs {
+  LoginTab = 0,
+  RegisterTab = 1,
+}

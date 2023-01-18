@@ -10,13 +10,13 @@ import {
   StyledTabBarLabel,
   StyledStartContainer,
 } from './styles'
-import { TabBarCustomProps } from './types'
+import { StartTabs, TabBarCustomProps } from './types'
 import { useUsers } from 'src/api/useUsers'
 
 const windowWidth = Dimensions.get('window').width
 
 export default function Start() {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState<StartTabs>(StartTabs.LoginTab)
   const { data: users, refetch } = useUsers()
   const [routes] = useState([
     { key: 'login', title: 'Login' },
@@ -24,7 +24,7 @@ export default function Start() {
   ])
 
   const handleTabChange = useCallback(
-    (idx: number) => {
+    (idx: StartTabs) => {
       setIndex(idx)
       refetch()
     },
@@ -33,7 +33,7 @@ export default function Start() {
 
   const renderScene = SceneMap({
     login: () => <Login users={users} />,
-    register: () => <Register users={users} />,
+    register: () => <Register users={users} handleTabChange={handleTabChange} />,
   })
 
   const renderTabBar = useCallback(
