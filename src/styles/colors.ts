@@ -1,5 +1,6 @@
 export const colors = {
-  text: '#FFFFFF',
+  text: '#ffffff',
+  textOpacity: '#ffffffab',
   background: '#141414',
   backgroundOpacity: '#141414d6',
   success: '#23B565',
