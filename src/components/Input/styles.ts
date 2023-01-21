@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export const StyledInputContainer = styled(View)`
   border-color: ${({ theme }) => theme.colors.ornament};
   border-bottom-width: 1px;
-  width: 200px;
+  width: 250px;
   margin: 14px 0;
 `
 

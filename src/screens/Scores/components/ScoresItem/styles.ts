@@ -16,5 +16,5 @@ export const StyledScoresItemText = styled(Text)<{ alignment?: TextAlignment; is
   font-size: 20px;
   color: ${(props) => (props.isCurrentUser ? props.theme.colors.ornament : props.theme.colors.text)};
   flex: 1;
-  text-align: ${(props) => props.alignment};
+  text-align: ${(props) => props.alignment || TextAlignment.LEFT};
 `

@@ -19,3 +19,9 @@ export interface UserType {
   password: string
   score: number
 }
+
+export enum MessageTypes {
+  DEFAULT = 'text',
+  SUCCESS = 'success',
+  FAILURE = 'failure',
+}

@@ -9,6 +9,6 @@ export const StyledRegisterContainer = styled(View)`
 `
 
 export const StyledRegisterBtnContainer = styled(View)`
-  width: 200px;
+  width: 250px;
   margin-top: 10px;
 `

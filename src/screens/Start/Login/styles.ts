@@ -9,6 +9,6 @@ export const StyledLoginContainer = styled(View)`
 `
 
 export const StyledLoginBtnContainer = styled(View)`
-  width: 200px;
+  width: 250px;
   margin-top: 10px;
 `
