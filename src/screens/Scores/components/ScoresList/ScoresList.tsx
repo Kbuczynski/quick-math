@@ -12,12 +12,16 @@ export default function ScoresList() {
   const { data: users, isLoading, isError, refetch } = useUsers()
   const [refreshing, setRefreshing] = useState(false)
 
-  const handleRefresh = useCallback(() => {
+  const handlePullToRefresh = useCallback(() => {
     setRefreshing(true)
-    refetch().then(() => setRefreshing(false))
+    refetch().finally(() => setRefreshing(false))
   }, [refetch])
 
-  useFocusEffect(handleRefresh)
+  const initRefresh = useCallback(() => {
+    refetch()
+  }, [refetch])
+
+  useFocusEffect(initRefresh)
 
   if (isLoading && !users) {
     return <ActivityIndicator />
@@ -29,14 +33,15 @@ export default function ScoresList() {
 
   return (
     <StyledScoresList
-      onRefresh={handleRefresh}
+      onRefresh={handlePullToRefresh}
       refreshing={refreshing}
       data={users}
       ItemSeparatorComponent={() => <ListSeparator />}
       keyExtractor={(user: any) => `${user.name}${user.id}`}
       renderItem={(user) => <ScoresItem user={user.item as UserType} index={++user.index} />}
-      ListEmptyComponent={<ScoresEmptyList text="No scores" />}
+      ListEmptyComponent={<ScoresEmptyList text={'No scores'} />}
       initialNumToRender={users?.length}
+      showsVerticalScrollIndicator={false}
     />
   )
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react'
-import { StyledScoresItem, StyledScoresItemText } from './styles'
+import { StyledScoresItem, StyledScoresItemText, TextAlignment } from './styles'
 import { UserType } from 'src/types'
 import { AuthContext } from 'src/context'
 
@@ -16,8 +16,10 @@ export default function ScoresItem({ user, index }: ScoresItemProps) {
   return (
     <StyledScoresItem>
       <StyledScoresItemText isCurrentUser={isCurrentUser}>{index}</StyledScoresItemText>
-      <StyledScoresItemText isCurrentUser={isCurrentUser}>{user.name}</StyledScoresItemText>
-      <StyledScoresItemText centered isCurrentUser={isCurrentUser}>
+      <StyledScoresItemText isCurrentUser={isCurrentUser} numberOfLines={1}>
+        {user.name}
+      </StyledScoresItemText>
+      <StyledScoresItemText alignment={TextAlignment.RIGHT} isCurrentUser={isCurrentUser}>
         {user.score}
       </StyledScoresItemText>
     </StyledScoresItem>
