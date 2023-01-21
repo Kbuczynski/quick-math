@@ -8,7 +8,7 @@ mobile game involving equation solving on time
 * your best score is saved and displayed on the score board with best scores of other players
 
 ## Demo
-https://user-images.githubusercontent.com/44814273/210407862-2723075e-2b0a-41cb-8fe6-152aee96328c.mov
+https://user-images.githubusercontent.com/44814273/213872661-bf956eee-b133-48eb-a89d-89356fb1cbf7.MP4
 
 ## Stack
 * React Native
