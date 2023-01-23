@@ -2,9 +2,9 @@
 mobile game involving equation solving on time
 
 ## Rules
-* every correclty resolved equation add some extra time
-* every incorreclty resolved equation takes away some time
-* the difficult of the game increases exponentially with number of correct answears 
+* every correctly resolved equation add one point to your score and some extra time
+* every incorrectly resolved equation takes away some time
+* the difficult of the game increases exponentially with number of correct answers 
 * your best score is saved and displayed on the score board with best scores of other players
 
 ## Demo
@@ -17,15 +17,19 @@ https://user-images.githubusercontent.com/44814273/213872661-bf956eee-b133-48eb-
 
 ## How to run
 
-First install dependencies
+First create .env file
+
+`cp template.env .env`
+
+Install dependencies
 
 `cd ios && pod install && cd ../ && yarn`
 
-Next run Metro
+Run Metro
 
 `yarn start`
 
-Next in parallel terminal run API server
+Then in parallel terminal run API server
 
 `yarn api`
 
