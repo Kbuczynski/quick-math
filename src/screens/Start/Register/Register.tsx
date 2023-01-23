@@ -7,6 +7,7 @@ import { useCreateUser } from 'src/api/useCreateUser'
 import { StartTabs } from '../types'
 import { AuthContext } from 'src/context'
 import Message from 'src/components/Message/Message'
+import HideKeyboardWrapper from 'src/components/HideKeyboardWrapper/HideKeyboardWrapper'
 
 interface RegisterProps {
   users: UserType[] | undefined
@@ -33,13 +34,15 @@ export default function Register({ users, handleTabChange }: RegisterProps) {
   }
 
   return (
-    <StyledRegisterContainer>
-      <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
-      <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
-      {isError && <Message text="Entered login is taken." type={MessageTypes.FAILURE} />}
-      <StyledRegisterBtnContainer>
-        <Button label="Register" handlePress={handleRegister} />
-      </StyledRegisterBtnContainer>
-    </StyledRegisterContainer>
+    <HideKeyboardWrapper>
+      <StyledRegisterContainer>
+        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
+        <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
+        {isError && <Message text="Entered login is taken." type={MessageTypes.FAILURE} />}
+        <StyledRegisterBtnContainer>
+          <Button label="Register" handlePress={handleRegister} />
+        </StyledRegisterBtnContainer>
+      </StyledRegisterContainer>
+    </HideKeyboardWrapper>
   )
 }

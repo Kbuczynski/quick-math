@@ -5,6 +5,7 @@ import Button from 'src/components/Button/Button'
 import { MessageTypes, UserType } from 'src/types'
 import { AuthContext } from 'src/context'
 import Message from 'src/components/Message/Message'
+import HideKeyboardWrapper from 'src/components/HideKeyboardWrapper/HideKeyboardWrapper'
 
 interface LoginProps {
   users: UserType[] | undefined
@@ -28,13 +29,15 @@ export default function Login({ users }: LoginProps) {
   }
 
   return (
-    <StyledLoginContainer>
-      <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
-      <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
-      {isError && <Message text="Login or password are incorrect." type={MessageTypes.FAILURE} />}
-      <StyledLoginBtnContainer>
-        <Button label="Login" handlePress={handleLogin} />
-      </StyledLoginBtnContainer>
-    </StyledLoginContainer>
+    <HideKeyboardWrapper>
+      <StyledLoginContainer>
+        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
+        <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
+        {isError && <Message text="Login or password are incorrect." type={MessageTypes.FAILURE} />}
+        <StyledLoginBtnContainer>
+          <Button label="Login" handlePress={handleLogin} />
+        </StyledLoginBtnContainer>
+      </StyledLoginContainer>
+    </HideKeyboardWrapper>
   )
 }
