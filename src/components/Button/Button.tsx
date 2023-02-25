@@ -1,4 +1,4 @@
-import React from 'react'
+import { TEST_IDS } from './constants'
 import { StyledBtn, StyledBtnLabel } from './style'
 
 interface ButtonProps {
@@ -10,8 +10,15 @@ interface ButtonProps {
 
 export default function Button({ label, handlePress, disabled = false, isPartOfList = false }: ButtonProps) {
   return (
-    <StyledBtn onPress={handlePress} disabled={disabled} isPartOfList={isPartOfList}>
-      <StyledBtnLabel disabled={disabled}>{label}</StyledBtnLabel>
+    <StyledBtn
+      onPress={disabled ? () => null : handlePress}
+      disabled={disabled}
+      isPartOfList={isPartOfList}
+      testID={TEST_IDS.BUTTON}
+    >
+      <StyledBtnLabel disabled={disabled} testID={TEST_IDS.BUTTON_LABEL}>
+        {label}
+      </StyledBtnLabel>
     </StyledBtn>
   )
 }

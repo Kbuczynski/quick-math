@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
 import { MessageTypes } from 'src/types'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export const StyledMessage = styled(Text)<{ type: MessageTypes }>`
   margin: 12px 0;

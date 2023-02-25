@@ -1,7 +1,7 @@
 import { TextInput, View } from 'react-native'
 import Reanimated from 'react-native-reanimated'
 import Animated from 'react-native-reanimated'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export const StyledInputContainer = styled(View)`
   border-color: ${({ theme }) => theme.colors.ornament};

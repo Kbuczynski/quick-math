@@ -1,5 +1,5 @@
 import { FlatList, TextInput, View } from 'react-native'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export const StyledResultForm = styled(View)`
   flex-direction: column;

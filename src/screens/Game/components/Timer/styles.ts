@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export const StyledTimer = styled(View)`
   flex-direction: row;

@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyledMessage } from './styles'
 import { MessageTypes } from 'src/types'
 
