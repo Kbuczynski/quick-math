@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyledBtn, StyledBtnLabel } from './style'
 
 interface ButtonProps {
@@ -6,11 +5,17 @@ interface ButtonProps {
   handlePress: () => void
   disabled?: boolean
   isPartOfList?: boolean
+  testId?: string
 }
 
-export default function Button({ label, handlePress, disabled = false, isPartOfList = false }: ButtonProps) {
+export default function Button({ label, handlePress, disabled = false, isPartOfList = false, testId }: ButtonProps) {
   return (
-    <StyledBtn onPress={handlePress} disabled={disabled} isPartOfList={isPartOfList}>
+    <StyledBtn
+      onPress={disabled ? () => null : handlePress}
+      disabled={disabled}
+      isPartOfList={isPartOfList}
+      testID={testId}
+    >
       <StyledBtnLabel disabled={disabled}>{label}</StyledBtnLabel>
     </StyledBtn>
   )

@@ -36,11 +36,17 @@ export default function Register({ users, handleTabChange }: RegisterProps) {
   return (
     <HideKeyboardWrapper>
       <StyledRegisterContainer>
-        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
-        <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
+        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} testId="register-name" />
+        <Input
+          placeholder="Enter password"
+          value={password}
+          onChangeValue={setPassword}
+          secure
+          testId="register-password"
+        />
         {isError && <Message text="Entered login is taken." type={MessageTypes.FAILURE} />}
         <StyledRegisterBtnContainer>
-          <Button label="Register" handlePress={handleRegister} />
+          <Button label="Register" handlePress={handleRegister} testId="register-button" />
         </StyledRegisterBtnContainer>
       </StyledRegisterContainer>
     </HideKeyboardWrapper>

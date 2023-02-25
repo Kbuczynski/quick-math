@@ -14,6 +14,7 @@ interface InputProps {
   value: string
   onChangeValue: Dispatch<SetStateAction<string>>
   secure?: boolean
+  testId: string
 }
 
 enum AnimationStates {
@@ -21,7 +22,7 @@ enum AnimationStates {
   TOP,
 }
 
-export default function Input({ placeholder, value, onChangeValue, secure = false }: InputProps) {
+export default function Input({ placeholder, value, onChangeValue, secure = false, testId }: InputProps) {
   const [isFocused, setIsFocused] = useState(false)
   const animationState = useSharedValue<AnimationStates>(AnimationStates.DOWN)
   const inputRef = useRef<TextInput>(null)
@@ -84,6 +85,7 @@ export default function Input({ placeholder, value, onChangeValue, secure = fals
         onFocus={() => {
           setIsFocused(true)
         }}
+        testID={testId}
       />
       <TouchableWithoutFeedback onPress={() => inputRef.current?.focus()}>
         <AnimatedStyledInputLabelContainer style={animatedInputLabelContainerStyle}>

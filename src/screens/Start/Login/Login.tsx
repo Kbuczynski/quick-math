@@ -31,11 +31,17 @@ export default function Login({ users }: LoginProps) {
   return (
     <HideKeyboardWrapper>
       <StyledLoginContainer>
-        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} />
-        <Input placeholder="Enter password" value={password} onChangeValue={setPassword} secure />
+        <Input placeholder="Enter login" value={login} onChangeValue={setLogin} testId="login-name" />
+        <Input
+          placeholder="Enter password"
+          value={password}
+          onChangeValue={setPassword}
+          secure
+          testId="login-password"
+        />
         {isError && <Message text="Login or password are incorrect." type={MessageTypes.FAILURE} />}
         <StyledLoginBtnContainer>
-          <Button label="Login" handlePress={handleLogin} />
+          <Button label="Login" handlePress={handleLogin} testId="login-button" />
         </StyledLoginBtnContainer>
       </StyledLoginContainer>
     </HideKeyboardWrapper>

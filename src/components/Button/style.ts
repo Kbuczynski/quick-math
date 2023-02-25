@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity } from 'react-native'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 export const StyledBtn = styled(TouchableOpacity)<{ isPartOfList: boolean }>`
   padding: 12px 8px;
