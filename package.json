@@ -10,9 +10,17 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prettier": "prettier --check './src/*' -w",
     "sanity": "yarn tsc && yarn lint && yarn prettier",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "jest /src",
+    "test:watch": "jest --watch /src",
+    "test:coverage": "jest --coverage /src",
+    "e2e:ios:build:debug": "detox build -c ios.sim.debug",
+    "e2e:ios:build:release": "detox build -c ios.sim.release",
+    "e2e:android:build:debug": "detox build -c android.emu.debug",
+    "e2e:android:build:release": "detox build -c android.emu.release",
+    "e2e:ios:run:debug": "detox test -c ios.sim.debug",
+    "e2e:ios:run:release": "detox test -c ios.sim.release",
+    "e2e:android:run:debug": "detox test -c android.emu.debug",
+    "e2e:android:run:release": "detox test -c android.emu.release"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "6.5.2",
@@ -50,6 +58,7 @@
     "babel-jest": "29.4.2",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-preset-expo": "9.2.2",
+    "detox": "20.2.1",
     "eslint": "7.32.0",
     "jest": "29.4.2",
     "jest-styled-components": "7.1.1",
